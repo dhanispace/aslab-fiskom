@@ -5,459 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open Recruitment | Asisten Lab Fisika Komputasi 2026/2027</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ==========================================
-           RESET & VARIABLE STYLES
-           ========================================== */
-        :root {
-            --primary: #0f172a;
-            --primary-accent: #2563eb;
-            --secondary-accent: #0284c7;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --wa-green: #25D366;
-            --wa-green-hover: #1da851;
-            --radius-lg: 16px;
-            --radius-md: 10px;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
-            --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
-            --transition: all 0.25s ease-in-out;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 15px; /* Skala font sedikit lebih ringkas & bersih */
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ==========================================
-           HEADER & NAVIGATION (BURGER MENU)
-           ========================================== */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.85rem 1.5rem;
-        }
-
-        .brand-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .brand-logo span {
-            color: var(--primary-accent);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.8rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-accent);
-        }
-
-        .nav-btn {
-            background-color: var(--primary-accent);
-            color: #fff !important;
-            padding: 0.5rem 1.1rem;
-            border-radius: var(--radius-md);
-            transition: var(--transition);
-        }
-
-        .nav-btn:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-1px);
-        }
-
-        /* Hamburger Toggle Icon */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 24px;
-            height: 18px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-        }
-
-        .hamburger span {
-            width: 100%;
-            height: 2.5px;
-            background-color: var(--primary);
-            border-radius: 2px;
-            transition: var(--transition);
-        }
-
-        /* Mobile Layout for Nav */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: #ffffff;
-                flex-direction: column;
-                align-items: stretch;
-                padding: 1.5rem;
-                gap: 1.2rem;
-                border-bottom: 1px solid var(--border-color);
-                box-shadow: var(--shadow-md);
-                transform: translateY(-150%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav-links a {
-                font-size: 1rem;
-            }
-
-            .nav-btn {
-                text-align: center;
-            }
-
-            /* Hamburger Animation active state */
-            .hamburger.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-        }
-
-        /* ==========================================
-           HERO SECTION
-           ========================================== */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #ffffff;
-            padding: 4rem 1.5rem 4.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(255,255,255,0) 60%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(37, 99, 235, 0.2);
-            border: 1px solid rgba(59, 130, 246, 0.4);
-            color: #93c5fd;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 0.35rem 0.9rem;
-            border-radius: 50px;
-            margin-bottom: 1.2rem;
-            letter-spacing: 0.5px;
-        }
-
-        .hero h1 {
-            font-size: clamp(1.8rem, 4vw, 2.7rem);
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .hero p {
-            font-size: 1rem;
-            color: #94a3b8;
-            max-width: 620px;
-            margin: 0 auto 2rem;
-            font-weight: 400;
-        }
-
-        /* ==========================================
-           MAIN CONTENT & GRID
-           ========================================== */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 1.75rem;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            box-shadow: var(--shadow-md);
-            border-color: #cbd5e1;
-            transform: translateY(-2px);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .card-header h2 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .custom-list {
-            list-style: none;
-        }
-
-        .custom-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--text-main);
-        }
-
-        .custom-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0.2rem;
-            color: var(--primary-accent);
-            font-weight: bold;
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-
-        ol.custom-list {
-            counter-reset: item;
-        }
-
-        ol.custom-list li::before {
-            content: counter(item) ".";
-            counter-increment: item;
-            font-size: 0.85rem;
-        }
-
-        /* ==========================================
-           TIMELINE TABLE
-           ========================================== */
-        .timeline-section {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 2rem 1.75rem;
-            margin-bottom: 3rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .table-responsive {
-            overflow-x: auto;
-        }
-
-        .modern-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            margin-top: 1rem;
-        }
-
-        .modern-table th {
-            background-color: #f1f5f9;
-            color: var(--primary);
-            padding: 0.85rem 1rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .modern-table td {
-            padding: 0.85rem 1rem;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            color: var(--text-main);
-        }
-
-        .modern-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .modern-table tr:hover td {
-            background-color: #f8fafc;
-        }
-
-        /* ==========================================
-           CTA SECTION (WHATSAPP BUTTON)
-           ========================================== */
-        .cta-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            border-radius: var(--radius-lg);
-            padding: 3rem 1.5rem;
-            text-align: center;
-            color: #ffffff;
-            margin-bottom: 2rem;
-        }
-
-        .cta-content h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 0.6rem;
-        }
-
-        .cta-content p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 1.75rem;
-        }
-
-        /* Tombol Utama & WA Styles */
-        .btn-primary, .btn-wa {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.75rem 1.75rem;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-accent);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-wa {
-            background-color: var(--wa-green);
-            color: #ffffff;
-        }
-
-        .btn-wa:hover {
-            background-color: var(--wa-green-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-wa svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-
-        /* ==========================================
-           FOOTER
-           ========================================== */
-        footer {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-color);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -465,17 +13,18 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="#" class="brand-logo">
-                ⚡ Lab <span>Fisika Komputasi</span>
+                💻 Lab <span>Fisika Komputasi</span>
             </a>
 
             <!-- Menu Navigation -->
             <ul class="nav-links" id="navLinks">
+                <li><a href="#poster">Poster</a></li>
                 <li><a href="#persyaratan">Persyaratan</a></li>
                 <li><a href="#tugas">Tugas</a></li>
                 <li><a href="#berkas">Berkas</a></li>
                 <li><a href="#timeline">Timeline</a></li>
-                <!-- GANTI nomor WA di bawah ini -->
                 <li>
+                    <!-- GANTI nomor WA di bawah ini -->
                     <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Lab%20Fisika%20Komputasi,%20saya%20ingin%20mendaftar%20sebagai%20Asisten%20Laboratorium." 
                        target="_blank" 
                        class="nav-btn">Daftar Sekarang</a>
@@ -491,7 +40,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (DENGAN GAMBAR DI BALIK BG BIRU) -->
     <section class="hero">
         <div class="hero-content">
             <span class="badge">Tahun Akademik 2026/2027</span>
@@ -504,6 +53,17 @@
     <!-- MAIN CONTENT -->
     <main class="container">
         
+        <!-- POSTER SECTION (SEBELUM PERSYARATAN) -->
+        <section class="poster-section" id="poster">
+            <div class="section-header">
+                <h2>📌 Poster Informasi Official</h2>
+            </div>
+            <div class="poster-container">
+                <!-- GANTI 'poster-oprec.jpg' DENGAN NAMA/PATH GAMBAR POSTER ANDA -->
+                <img src="poster-oprec.jpg" alt="Poster Open Recruitment Lab Fisika Komputasi" class="poster-img">
+            </div>
+        </section>
+
         <!-- Grid Persyaratan, Tugas, Berkas -->
         <div class="grid-layout">
             
@@ -624,11 +184,6 @@
                 <h2>Siap Menjadi Bagian dari Tim Kami?</h2>
                 <p>Mari bersama mengembangkan praktikum berkualitas dan inovasi komputasi ilmiah di Program Studi Fisika.</p>
                 
-                <!-- 
-                  CATATAN PENTING:
-                  Ganti '6281234567890' dengan nomor WhatsApp Admin/Lab yang sebenarnya.
-                  Pastikan diawali dengan kode negara (misal 62 untuk Indonesia).
-                -->
                 <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Lab%20Fisika%20Komputasi,%20saya%20ingin%20mendaftar%20sebagai%20Asisten%20Laboratorium." 
                    target="_blank" 
                    class="btn-wa">
@@ -647,23 +202,7 @@
         <p>&copy; 2026 Laboratorium Fisika Komputasi — Program Studi Fisika. All Rights Reserved.</p>
     </footer>
 
-    <!-- JAVASCRIPT FOR MOBILE BURGER MENU -->
-    <script>
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Menutup menu mobile saat salah satu link diklik
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerBtn.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
+    <!-- SCRIPT JS -->
+    <script src="script.js"></script>
 </body>
 </html>
