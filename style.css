@@ -532,7 +532,7 @@ ol.custom-list li::before {
    ========================================== */
 .cta-section {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%), 
-                url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop') center/cover;
+                url('img/b.jpeg') center/cover;
     border-radius: var(--radius-lg);
     padding: 4rem 2rem;
     text-align: center;
