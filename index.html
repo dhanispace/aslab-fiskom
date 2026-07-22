@@ -3,288 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Recruitment Asisten Lab Fisika Komputasi</title>
-    <style>
-        :root {
-            --primary-color: #0056b3;
-            --secondary-color: #00a8cc;
-            --bg-color: #f4f7f6;
-            --text-color: #333;
-            --card-bg: #ffffff;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-        }
-
-        header h2 {
-            margin: 10px 0 20px;
-            font-weight: 400;
-        }
-
-        header p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1em;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
-        ul, ol {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .cta-section {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: white;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: var(--secondary-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #222;
-            color: white;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Recruitment | Lab Fisika Komputasi</title>
+    <!-- Menggunakan Font Modern (Poppins) dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>OPEN RECRUITMENT</h1>
-        <h2>ASISTEN LABORATORIUM FISIKA KOMPUTASI[cite: 1]</h2>
-        <p>Tahun Akademik 2026/2027[cite: 1]</p>
-        <p>Laboratorium Fisika Komputasi Program Studi Fisika membuka kesempatan bagi mahasiswa yang memiliki minat di bidang komputasi ilmiah untuk bergabung sebagai Asisten Laboratorium Fisika Komputasi.[cite: 1]</p>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Tahun Akademik 2026/2027[cite: 1]</span>
+            <h1>OPEN RECRUITMENT <br> <span>ASISTEN LABORATORIUM FISIKA KOMPUTASI[cite: 1]</span></h1>
+            <p>Laboratorium Fisika Komputasi Program Studi Fisika membuka kesempatan bagi mahasiswa yang memiliki minat di bidang komputasi ilmiah untuk bergabung sebagai Asisten Laboratorium Fisika Komputasi.[cite: 1]</p>
+            <a href="#timeline" class="btn-primary">Lihat Jadwal Seleksi</a>
+        </div>
     </header>
 
-    <div class="container">
+    <!-- KONTEN UTAMA -->
+    <main class="container">
         
-        <!-- Kolom Kiri: Persyaratan -->
-        <div class="card full-width">
-            <h3>Persyaratan</h3>
-            <ul>
-                <li>Mahasiswa aktif Program Studi Fisika Angkatan 2024.[cite: 1]</li>
-                <li>Telah lulus mata kuliah Fisika Komputasi I dan Fisika Komputasi II dengan nilai minimal B+.[cite: 1]</li>
-                <li>Telah lulus mata kuliah Praktikum Fisika Komputasi I dan Fisika Komputasi II dengan nilai minimal B+.[cite: 1]</li>
-                <li>Telah lulus mata kuliah Dasar Pemrograman Fisika Komputasi dengan nilai minimal B+.[cite: 1]</li>
-                <li>Memiliki Nilai Indeks Prestasi Semester minimal 3,10.[cite: 1]</li>
-                <li>Menguasai dasar pemrograman Python atau MATLAB.[cite: 1]</li>
-                <li>Mampu mengoperasikan Microsoft Office.[cite: 1]</li>
-                <li>Memiliki kemampuan komunikasi yang baik.[cite: 1]</li>
-                <li>Bertanggung jawab, disiplin, jujur, dan mampu bekerja sama dalam tim.[cite: 1]</li>
-                <li>Tidak terdaftar dalam Daftar Hitam Asisten Laboratorium Fisika Komputasi.[cite: 1]</li>
-                <li>Tidak sedang menjabat sebagai Asisten Laboratorium lain pada semester yang sama.[cite: 1]</li>
-                <li>Memiliki komitmen untuk menjalankan tugas sebagai Asisten Laboratorium Fisika Komputasi selama satu semester penuh.[cite: 1]</li>
-                <li>Bersedia mengikuti seluruh rangkaian proses seleksi sesuai ketentuan yang berlaku.[cite: 1]</li>
-            </ul>
+        <div class="grid-layout">
+            <!-- Persyaratan -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>📋 Persyaratan</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="custom-list">
+                        <li>Mahasiswa aktif Program Studi Fisika Angkatan 2024.[cite: 1]</li>
+                        <li>Telah lulus mata kuliah Fisika Komputasi I dan Fisika Komputasi II dengan nilai minimal B+.[cite: 1]</li>
+                        <li>Telah lulus mata kuliah Praktikum Fisika Komputasi I dan Fisika Komputasi II dengan nilai minimal B+.[cite: 1]</li>
+                        <li>Telah lulus mata kuliah Dasar Pemrograman Fisika Komputasi dengan nilai minimal B+.[cite: 1]</li>
+                        <li>Memiliki Nilai Indeks Prestasi Semester minimal 3,10.[cite: 1]</li>
+                        <li>Menguasai dasar pemrograman Python atau MATLAB.[cite: 1]</li>
+                        <li>Mampu mengoperasikan Microsoft Office.[cite: 1]</li>
+                        <li>Memiliki kemampuan komunikasi yang baik.[cite: 1]</li>
+                        <li>Bertanggung jawab, disiplin, jujur, dan mampu bekerja sama dalam tim.[cite: 1]</li>
+                        <li>Tidak terdaftar dalam Daftar Hitam Asisten Laboratorium Fisika Komputasi.[cite: 1]</li>
+                        <li>Tidak sedang menjabat sebagai Asisten Laboratorium lain pada semester yang sama.[cite: 1]</li>
+                        <li>Memiliki komitmen untuk menjalankan tugas sebagai Asisten Laboratorium Fisika Komputasi selama satu semester penuh.[cite: 1]</li>
+                        <li>Bersedia mengikuti seluruh rangkaian proses seleksi sesuai ketentuan yang berlaku.[cite: 1]</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Tugas Asisten -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>💻 Tugas Asisten</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="custom-list">
+                        <li>Membantu dosen dalam pelaksanaan praktikum Fisika Komputasi.[cite: 1]</li>
+                        <li>Membimbing praktikan selama kegiatan praktikum.[cite: 1]</li>
+                        <li>Menyiapkan modul, bahan ajar, serta perangkat praktikum.[cite: 1]</li>
+                        <li>Membantu pengembangan program Python/MATLAB untuk praktikum.[cite: 1]</li>
+                        <li>Melakukan pengecekan dan pemeliharaan komputer laboratorium.[cite: 1]</li>
+                        <li>Membantu penilaian laporan praktikum.[cite: 1]</li>
+                        <li>Menyusun administrasi laboratorium.[cite: 1]</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Berkas Pendaftaran -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>📁 Berkas Pendaftaran</h2>
+                </div>
+                <div class="card-body">
+                    <ol class="custom-number-list">
+                        <li>Surat Lamaran.[cite: 1]</li>
+                        <li>Curriculum Vitae (CV).[cite: 1]</li>
+                        <li>Kartu Hasil Studi (KHS) Semester 2, Semester 3, dan Semester 4.[cite: 1]</li>
+                        <li>Kartu Tanda Mahasiswa (KTM).[cite: 1]</li>
+                        <li>Pas foto latar belakang biru ukuran 3x4 sebanyak 1 lembar.[cite: 1]</li>
+                        <li>Esai (1-2 halaman) yang berisi: Alasan ingin menjadi Asisten Laboratorium Fisika Komputasi, serta Kontribusi yang akan diberikan untuk pengembangan Laboratorium Fisika Komputasi.[cite: 1]</li>
+                        <li>Sertifikat pendukung (jika ada).[cite: 1]</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Tahapan & Benefit (Digabung dalam satu grid) -->
+            <div class="split-card">
+                <section class="card">
+                    <div class="card-header">
+                        <h2>⚙️ Tahapan Seleksi</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="custom-list check">
+                            <li>Seleksi Administrasi.[cite: 1]</li>
+                            <li>Tes Tertulis.[cite: 1]</li>
+                            <li>Tes Praktik Pemrograman dan Microteaching Praktikum.[cite: 1]</li>
+                            <li>Wawancara.[cite: 1]</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="card mt-20">
+                    <div class="card-header">
+                        <h2>🎁 Benefit</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="custom-list star">
+                            <li>Sertifikat Asisten Laboratorium.[cite: 1]</li>
+                            <li>Pengalaman mengajar praktikum.[cite: 1]</li>
+                            <li>Pengembangan kemampuan pemrograman ilmiah.[cite: 1]</li>
+                            <li>Kesempatan terlibat dalam penelitian laboratorium.[cite: 1]</li>
+                            <li>Insentif sesuai ketentuan laboratorium.[cite: 1]</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </div>
 
-        <!-- Kolom Kanan: Tugas Asisten & Berkas -->
-        <div class="card">
-            <h3>Tugas Asisten</h3>
-            <ul>
-                <li>Membantu dosen dalam pelaksanaan praktikum Fisika Komputasi.[cite: 1]</li>
-                <li>Membimbing praktikan selama kegiatan praktikum.[cite: 1]</li>
-                <li>Menyiapkan modul, bahan ajar, serta perangkat praktikum.[cite: 1]</li>
-                <li>Membantu pengembangan program Python/MATLAB untuk praktikum.[cite: 1]</li>
-                <li>Melakukan pengecekan dan pemeliharaan komputer laboratorium.[cite: 1]</li>
-                <li>Membantu penilaian laporan praktikum.[cite: 1]</li>
-                <li>Menyusun administrasi laboratorium.[cite: 1]</li>
-            </ul>
-        </div>
+        <!-- TIMELINE SECTION -->
+        <section id="timeline" class="timeline-section">
+            <h2 class="section-title">Timeline Seleksi</h2>
+            <div class="table-container">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Tahapan</th>
+                            <th>Tanggal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pendaftaran[cite: 1]</td>
+                            <td>24-28 Juli 2026[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td>Seleksi Administrasi[cite: 1]</td>
+                            <td>24-28 Juli 2026[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td>Pengumuman Seleksi Administrasi[cite: 1]</td>
+                            <td>29 Juli 2026[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td>Tes Tertulis[cite: 1]</td>
+                            <td>30 Juli 2026[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td>Pengumuman Tes Tertulis[cite: 1]</td>
+                            <td>30 Juli 2026[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td>Tes Praktik Pemrograman dan Microteaching Praktikum[cite: 1]</td>
+                            <td>31 Juli 2026[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td>Pengumuman Tes Praktik dan Microteaching Praktikum[cite: 1]</td>
+                            <td>31 Juli 2026[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td>Wawancara[cite: 1]</td>
+                            <td>1 Agustus 2026[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td>Pengumuman Akhir[cite: 1]</td>
+                            <td>2 Agustus 2026[cite: 1]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <div class="card">
-            <h3>Berkas Pendaftaran</h3>
-            <ol>
-                <li>Surat Lamaran.[cite: 1]</li>
-                <li>Curriculum Vitae (CV).[cite: 1]</li>
-                <li>Kartu Hasil Studi (KHS) Semester 2, Semester 3, dan Semester 4.[cite: 1]</li>
-                <li>Kartu Tanda Mahasiswa (KTM).[cite: 1]</li>
-                <li>Pas foto latar belakang biru ukuran 3x4 sebanyak 1 lembar.[cite: 1]</li>
-                <li>Esai (1-2 halaman) yang berisi: Alasan ingin menjadi Asisten Laboratorium Fisika Komputasi, serta Kontribusi yang akan diberikan untuk pengembangan Laboratorium Fisika Komputasi.[cite: 1]</li>
-                <li>Sertifikat pendukung (jika ada).[cite: 1]</li>
-            </ol>
-        </div>
+    </main>
 
-        <!-- Kolom Tahapan & Benefit -->
-        <div class="card">
-            <h3>Tahapan Seleksi</h3>
-            <ul>
-                <li>Seleksi Administrasi.[cite: 1]</li>
-                <li>Tes Tertulis.[cite: 1]</li>
-                <li>Tes Praktik Pemrograman dan Microteaching Praktikum.[cite: 1]</li>
-                <li>Wawancara.[cite: 1]</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Benefit</h3>
-            <ul>
-                <li>Sertifikat Asisten Laboratorium.[cite: 1]</li>
-                <li>Pengalaman mengajar praktikum.[cite: 1]</li>
-                <li>Pengembangan kemampuan pemrograman ilmiah.[cite: 1]</li>
-                <li>Kesempatan terlibat dalam penelitian laboratorium.[cite: 1]</li>
-                <li>Insentif sesuai ketentuan laboratorium.[cite: 1]</li>
-            </ul>
-        </div>
-
-        <!-- Timeline Full Width -->
-        <div class="card full-width">
-            <h3>Timeline Seleksi</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tahapan</th>
-                        <th>Tanggal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Pendaftaran[cite: 1]</td>
-                        <td>24-28 Juli 2026[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Seleksi Administrasi[cite: 1]</td>
-                        <td>24-28 Juli 2026[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Pengumuman Seleksi Administrasi[cite: 1]</td>
-                        <td>29 Juli 2026[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Tes Tertulis[cite: 1]</td>
-                        <td>30 Juli 2026[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Pengumuman Tes Tertulis[cite: 1]</td>
-                        <td>30 Juli 2026[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Tes Praktik Pemrograman dan Microteaching Praktikum[cite: 1]</td>
-                        <td>31 Juli 2026[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Pengumuman Tes Praktik dan Microteaching Praktikum[cite: 1]</td>
-                        <td>31 Juli 2026[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Wawancara[cite: 1]</td>
-                        <td>1 Agustus 2026[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Pengumuman Akhir[cite: 1]</td>
-                        <td>2 Agustus 2026[cite: 1]</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-
+    <!-- CALL TO ACTION (CTA) -->
     <section class="cta-section">
-        <p>Mari bergabung menjadi bagian dari Laboratorium Fisika Komputasi dan bersama-sama mengembangkan kualitas praktikum, inovasi komputasi ilmiah, serta budaya akademik yang unggul di Program Studi Fisika.[cite: 1]</p>
-        <br>
-        <a href="#" class="cta-button">Daftar Sekarang</a>
+        <div class="cta-content">
+            <h2>Siap Mengembangkan Dirimu?</h2>
+            <p>Mari bergabung menjadi bagian dari Laboratorium Fisika Komputasi dan bersama-sama mengembangkan kualitas praktikum, inovasi komputasi ilmiah, serta budaya akademik yang unggul di Program Studi Fisika.[cite: 1]</p>
+            <a href="#" class="btn-primary glow">Daftarkan Dirimu Sekarang</a>
+        </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-        &copy; 2026 Laboratorium Fisika Komputasi. Program Studi Fisika.
+        <p>&copy; 2026 Laboratorium Fisika Komputasi - Program Studi Fisika. All rights reserved.</p>
     </footer>
 
 </body>
