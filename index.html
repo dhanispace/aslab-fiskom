@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open Recruitment | Asisten Lab Fisika Komputasi 2026/2027</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,8 +30,8 @@
                 <li><a href="#berkas">Berkas</a></li>
                 <li><a href="#timeline">Timeline</a></li>
                 <li>
-                    <a href="https://wa.me/6285265286656?text=Halo%20Bang%20Rizki,%20saya%20*[NAMA]*,%20dengan%20NIM:%20*[NIM]*%20dari%20Kelas%20*[KELAS]*%20ingin%20mendaftar%20sebagai%20Asisten%20Laboratorium%20Fisika%20Komputasi." 
-                       target="_blank" 
+                    <a href="https://wa.me/6285265286656?text=Halo%20Bang%20Rizki,%20saya%20*[NAMA]*,%20dengan%20NIM:%20*[NIM]*%20dari%20Kelas%20*[KELAS]*%20ingin%20mendaftar%20sebagai%20Asisten%20Laboratorium%20Fisika%20Komputasi."
+                       target="_blank"
                        class="nav-btn">Daftar Sekarang</a>
                 </li>
             </ul>
@@ -46,6 +47,7 @@
 
     <!-- HERO SECTION MODERN -->
     <section class="hero">
+        <canvas id="oscilloscope" aria-hidden="true"></canvas>
         <div class="hero-content">
             <div class="badge">
                 <span class="badge-dot"></span>
@@ -53,7 +55,7 @@
             </div>
             <h1>OPEN RECRUITMENT<br><span class="gradient-text">ASISTEN LABORATORIUM</span><br>FISIKA KOMPUTASI</h1>
             <p>Laboratorium Fisika Komputasi Program Studi Fisika membuka kesempatan bagi mahasiswa yang berminat di bidang komputasi ilmiah.</p>
-            
+
             <div class="hero-actions">
                 <a href="#timeline" class="btn-primary">Lihat Jadwal Seleksi →</a>
                 <a href="#poster" class="btn-secondary">Lihat Poster</a>
@@ -81,12 +83,12 @@
 
     <!-- MAIN CONTENT -->
     <main class="container">
-        
+
         <!-- POSTER SECTION -->
-        <section class="poster-section" id="poster">
+        <section class="poster-section reveal" id="poster">
             <div class="section-header">
-                <span class="sub-title">INFORMASI RESMI</span>
-                <h2>📌 Poster Recruitment Official</h2>
+                <span class="sub-title">Informasi Resmi</span>
+                <h2>Poster Recruitment Official</h2>
             </div>
             <div class="poster-container">
                 <div class="poster-badge">Resmi</div>
@@ -97,9 +99,9 @@
 
         <!-- Grid Persyaratan, Tugas, Berkas -->
         <div class="grid-layout">
-            
+
             <!-- Persyaratan -->
-            <section class="card highlight-card" id="persyaratan">
+            <section class="card highlight-card reveal" id="persyaratan">
                 <div class="card-header">
                     <div class="card-icon">📋</div>
                     <h2>Persyaratan</h2>
@@ -118,7 +120,7 @@
             </section>
 
             <!-- Tugas -->
-            <section class="card" id="tugas">
+            <section class="card reveal" id="tugas">
                 <div class="card-header">
                     <div class="card-icon">💻</div>
                     <h2>Tugas Utama</h2>
@@ -135,7 +137,7 @@
             </section>
 
             <!-- Berkas -->
-            <section class="card" id="berkas">
+            <section class="card reveal" id="berkas">
                 <div class="card-header">
                     <div class="card-icon">📁</div>
                     <h2>Berkas Pendaftaran</h2>
@@ -155,7 +157,7 @@
 
         <!-- Grid Tahapan & Benefit -->
         <div class="grid-layout">
-            <section class="card">
+            <section class="card reveal">
                 <div class="card-header">
                     <div class="card-icon">⚙️</div>
                     <h2>Tahapan Seleksi</h2>
@@ -169,8 +171,8 @@
                     </ul>
                 </div>
             </section>
-            
-            <section class="card highlight-card">
+
+            <section class="card highlight-card reveal">
                 <div class="card-header">
                     <div class="card-icon">🎁</div>
                     <h2>Benefit Asisten</h2>
@@ -188,44 +190,84 @@
         </div>
 
         <!-- TIMELINE SELECTION -->
-        <section id="timeline" class="timeline-section">
+        <section id="timeline" class="timeline-section reveal">
             <div class="section-header-left">
-                <span class="sub-title">JADWAL SELEKSI</span>
-                <h2>🗓️ Timeline Pendaftaran &amp; Seleksi</h2>
+                <span class="sub-title">Jadwal Seleksi</span>
+                <h2>Timeline Pendaftaran &amp; Seleksi</h2>
             </div>
-            <div class="table-responsive">
-                <table class="modern-table">
-                    <thead>
-                        <tr>
-                            <th>Tahapan</th>
-                            <th>Tanggal Pelaksanaan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Pendaftaran &amp; Seleksi Administrasi</td><td><span class="tag-date">24–28 Juli 2026</span></td></tr>
-                        <tr><td>Pengumuman Seleksi Administrasi</td><td>29 Juli 2026</td></tr>
-                        <tr><td>Tes Tertulis</td><td>30 Juli 2026</td></tr>
-                        <tr><td>Pengumuman Tes Tertulis</td><td>30 Juli 2026</td></tr>
-                        <tr><td>Tes Praktik &amp; Microteaching</td><td>31 Juli 2026</td></tr>
-                        <tr><td>Pengumuman Tes Praktik</td><td>31 Juli 2026</td></tr>
-                        <tr><td>Wawancara</td><td>1 Agustus 2026</td></tr>
-                        <tr><td>Pengumuman Akhir</td><td><span class="tag-date final">2 Agustus 2026</span></td></tr>
-                    </tbody>
-                </table>
-            </div>
+
+            <ol class="stepper">
+                <li class="step">
+                    <div class="step-marker"><span class="step-num">01</span></div>
+                    <div class="step-body">
+                        <h3>Pendaftaran &amp; Seleksi Administrasi</h3>
+                        <span class="tag-date">24–28 Juli 2026</span>
+                    </div>
+                </li>
+                <li class="step">
+                    <div class="step-marker"><span class="step-num">02</span></div>
+                    <div class="step-body">
+                        <h3>Pengumuman Seleksi Administrasi</h3>
+                        <span class="tag-date">29 Juli 2026</span>
+                    </div>
+                </li>
+                <li class="step">
+                    <div class="step-marker"><span class="step-num">03</span></div>
+                    <div class="step-body">
+                        <h3>Tes Tertulis</h3>
+                        <span class="tag-date">30 Juli 2026</span>
+                    </div>
+                </li>
+                <li class="step">
+                    <div class="step-marker"><span class="step-num">04</span></div>
+                    <div class="step-body">
+                        <h3>Pengumuman Tes Tertulis</h3>
+                        <span class="tag-date">30 Juli 2026</span>
+                    </div>
+                </li>
+                <li class="step">
+                    <div class="step-marker"><span class="step-num">05</span></div>
+                    <div class="step-body">
+                        <h3>Tes Praktik &amp; Microteaching</h3>
+                        <span class="tag-date">31 Juli 2026</span>
+                    </div>
+                </li>
+                <li class="step">
+                    <div class="step-marker"><span class="step-num">06</span></div>
+                    <div class="step-body">
+                        <h3>Pengumuman Tes Praktik</h3>
+                        <span class="tag-date">31 Juli 2026</span>
+                    </div>
+                </li>
+                <li class="step">
+                    <div class="step-marker"><span class="step-num">07</span></div>
+                    <div class="step-body">
+                        <h3>Wawancara</h3>
+                        <span class="tag-date">1 Agustus 2026</span>
+                    </div>
+                </li>
+                <li class="step step-final">
+                    <div class="step-marker"><span class="step-num">08</span></div>
+                    <div class="step-body">
+                        <h3>Pengumuman Akhir</h3>
+                        <span class="tag-date final">2 Agustus 2026</span>
+                    </div>
+                </li>
+            </ol>
         </section>
 
         <!-- CALL TO ACTION (WHATSAPP DENGAN TOMBOL TRANSPARAN PUTIH) -->
-        <section class="cta-section">
+        <section class="cta-section reveal">
+            <canvas id="cta-canvas" aria-hidden="true"></canvas>
             <div class="cta-overlay"></div>
             <div class="cta-content">
-                <span class="badge badge-light">Pendaftaran Online</span>
+                <span class="badge badge-light"><span class="live-dot"></span>Pendaftaran Online</span>
                 <h2>Siap Menjadi Bagian dari Tim Kami?</h2>
                 <p>Mari bersama mengembangkan praktikum berkualitas dan inovasi komputasi ilmiah di Program Studi Fisika.</p>
-                
+
                 <!-- TOMBOL WA TRANSPARAN PUTIH -->
-                <a href="https://wa.me/6285265286656?text=Halo%20Bang%20Rizki,%20saya%20*[NAMA]*,%20dengan%20NIM:%20*[NIM]*%20dari%20Kelas%20*[KELAS]*%20ingin%20mendaftar%20sebagai%20Asisten%20Laboratorium%20Fisika%20Komputasi." 
-                   target="_blank" 
+                <a href="https://wa.me/6285265286656?text=Halo%20Bang%20Rizki,%20saya%20*[NAMA]*,%20dengan%20NIM:%20*[NIM]*%20dari%20Kelas%20*[KELAS]*%20ingin%20mendaftar%20sebagai%20Asisten%20Laboratorium%20Fisika%20Komputasi."
+                   target="_blank"
                    class="btn-wa-glass">
                     <svg viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
