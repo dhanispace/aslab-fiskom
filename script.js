@@ -50,27 +50,37 @@ document.addEventListener('DOMContentLoaded', () => {
      computational-physics/numerical-simulation work.
   ------------------------------------------ */
   const oscCanvas = document.getElementById('oscilloscope');
+  const isSmallScreen = window.innerWidth < 768;
+  const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  const lightweightMode = isSmallScreen || isCoarsePointer;
 
   if (oscCanvas && !prefersReducedMotion) {
     const ctx = oscCanvas.getContext('2d');
     let w, h, dpr;
     let t = 0;
+    let running = true;
+    let rafId = null;
 
     function resize() {
-      dpr = window.devicePixelRatio || 1;
+      dpr = Math.min(window.devicePixelRatio || 1, lightweightMode ? 1 : 1.5);
       w = oscCanvas.clientWidth;
       h = oscCanvas.clientHeight;
-      oscCanvas.width = w * dpr;
-      oscCanvas.height = h * dpr;
+      oscCanvas.width = Math.round(w * dpr);
+      oscCanvas.height = Math.round(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
     resize();
-    window.addEventListener('resize', resize);
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 200);
+    });
 
     function drawGrid() {
       ctx.strokeStyle = 'rgba(148, 163, 184, 0.08)';
       ctx.lineWidth = 1;
-      const step = 40;
+      const step = 60;
       for (let x = 0; x < w; x += step) {
         ctx.beginPath();
         ctx.moveTo(x, 0);
@@ -91,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const ampX = Math.min(w, 900) * 0.36;
       const ampY = h * 0.3;
       const a = 3, b = 2;
-      const points = 260;
+      const points = lightweightMode ? 120 : 260;
 
       ctx.beginPath();
       for (let i = 0; i <= points; i++) {
@@ -107,20 +117,50 @@ document.addEventListener('DOMContentLoaded', () => {
       grad.addColorStop(1, 'rgba(56, 189, 248, 0.05)');
       ctx.strokeStyle = grad;
       ctx.lineWidth = 1.6;
-      ctx.shadowColor = 'rgba(94, 234, 212, 0.45)';
-      ctx.shadowBlur = 6;
+      if (!lightweightMode) {
+        ctx.shadowColor = 'rgba(94, 234, 212, 0.45)';
+        ctx.shadowBlur = 6;
+      }
       ctx.stroke();
       ctx.shadowBlur = 0;
     }
 
     function frame() {
+      if (!running) return;
       ctx.clearRect(0, 0, w, h);
       drawGrid();
       drawLissajous(t);
-      t += 0.0035;
-      requestAnimationFrame(frame);
+      t += lightweightMode ? 0.005 : 0.0035;
+      rafId = requestAnimationFrame(frame);
     }
-    requestAnimationFrame(frame);
+
+    function start() {
+      if (rafId === null) {
+        running = true;
+        rafId = requestAnimationFrame(frame);
+      }
+    }
+    function stop() {
+      running = false;
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+
+    // Only animate while the hero is actually visible.
+    if ('IntersectionObserver' in window) {
+      const heroObserver = new IntersectionObserver(
+        (entries) => entries.forEach((e) => (e.isIntersecting ? start() : stop())),
+        { threshold: 0.05 }
+      );
+      heroObserver.observe(oscCanvas);
+    } else {
+      start();
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else start();
+    });
   }
 
   /* ------------------------------------------
@@ -129,22 +169,30 @@ document.addEventListener('DOMContentLoaded', () => {
   ------------------------------------------ */
   const ctaCanvas = document.getElementById('cta-canvas');
 
-  if (ctaCanvas && !prefersReducedMotion) {
+  // Skip the purely-ambient CTA particles on phones/tablets to keep things light.
+  if (ctaCanvas && !prefersReducedMotion && !lightweightMode) {
     const ctx = ctaCanvas.getContext('2d');
     let w, h, dpr;
+    let running = true;
+    let rafId = null;
 
     function resize() {
-      dpr = window.devicePixelRatio || 1;
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       w = ctaCanvas.clientWidth;
       h = ctaCanvas.clientHeight;
-      ctaCanvas.width = w * dpr;
-      ctaCanvas.height = h * dpr;
+      ctaCanvas.width = Math.round(w * dpr);
+      ctaCanvas.height = Math.round(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
     resize();
-    window.addEventListener('resize', resize);
 
-    const COUNT = 36;
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 200);
+    });
+
+    const COUNT = 28;
     const particles = Array.from({ length: COUNT }, () => ({
       x: Math.random(),
       y: Math.random(),
@@ -154,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
 
     function frame() {
+      if (!running) return;
       ctx.clearRect(0, 0, w, h);
       particles.forEach((p) => {
         p.x += p.vx;
@@ -166,8 +215,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle = 'rgba(94, 234, 212, 0.5)';
         ctx.fill();
       });
-      requestAnimationFrame(frame);
+      rafId = requestAnimationFrame(frame);
     }
-    requestAnimationFrame(frame);
+
+    function start() {
+      if (rafId === null) {
+        running = true;
+        rafId = requestAnimationFrame(frame);
+      }
+    }
+    function stop() {
+      running = false;
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+
+    if ('IntersectionObserver' in window) {
+      const ctaObserver = new IntersectionObserver(
+        (entries) => entries.forEach((e) => (e.isIntersecting ? start() : stop())),
+        { threshold: 0.05 }
+      );
+      ctaObserver.observe(ctaCanvas);
+    } else {
+      start();
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop();
+      else start();
+    });
   }
 });
